@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-# neo_config
-The repo to store all my neo configuration info
-=======
-# 💤 LazyVim
+## neo_config
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
->>>>>>> 46b79cd (Initial neovim configuration for python)
+The repo to store all my [NeoVim](https://neovim.io/) configuration info derived from [lazy.nvim](https://github.com/folke/lazy.nvim).
