@@ -122,7 +122,7 @@ return {
   -- shortcuts might be setup here (see Usage > Shortcuts in Readme)
   {
     "robitx/gp.nvim",
-    enable = false, -- disable by default
+    enabled = false,
     config = function()
       require("gp").setup(conf)
 
