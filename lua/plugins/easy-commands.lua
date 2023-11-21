@@ -8,11 +8,11 @@ return {
         "<cmd>DebugStartOrContinue<cr>",
       },
       {
-        "<F10>",
+        "<F11>",
         "<cmd>DebugStepInto<cr>",
       },
       {
-        "<F11>",
+        "<F10>",
         "<cmd>DebugStepOver<cr>",
       },
       {
