@@ -5,9 +5,42 @@
 -- Enable LazyVim auto format
 vim.g.autoformat = true
 
--- Enable clipboard integration
-vim.opt.clipboard = "unnamedplus"
+-- Some OS detectors
+local is_wsl = vim.fn.has("wsl") == 1
 
+-- Enable clipboard integrationsvim
+-- WSL Clipboard support
+if is_wsl then
+  -- This is NeoVim's recommended way to solve clipboard sharing if you use WSL
+  -- See: https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
+  vim.g.clipboard = {
+    name = "WslClipboard",
+    copy = {
+      ["+"] = "clip.exe",
+      ["*"] = "clip.exe",
+    },
+    paste = {
+      ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+      ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    },
+    cache_enabled = 0,
+  }
+else
+  -- Use the predifined clipboard provider installed on $PATH
+  -- See https://zhuanlan.zhihu.com/p/419472307
+  vim.g.clipboard = {
+    name = "myClipboard",
+    copy = {
+      ["+"] = "clipboard-provider copy",
+      ["*"] = "clipboard-provider copy",
+    },
+    paste = {
+      ["+"] = "clipboard-provider paste",
+      ["*"] = "clipboard-provider paste",
+    },
+    cache_enabled = 0,
+  }
+end
 -- Double column number
 vim.o.statuscolumn = "%s %l %r"
 
