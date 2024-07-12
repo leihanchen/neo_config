@@ -5,6 +5,9 @@
 -- Enable LazyVim auto format
 vim.g.autoformat = true
 
+-- Enable global access to clipboard
+vim.opt.clipboard = "unnamedplus"
+
 -- Some OS detectors
 local is_wsl = vim.fn.has("wsl") == 1
 
