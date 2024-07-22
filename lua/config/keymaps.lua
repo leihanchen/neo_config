@@ -25,5 +25,5 @@ map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window w
 map({ "n", "x" }, "<C-a>", "ggVG", { desc = "Select all contents within current file", remap = true })
 
 -- Scartch setting
-vim.keymap.set("n", "<M-C-n>", "<cmd>Scratch<cr>")
-vim.keymap.set("n", "<M-C-o>", "<cmd>ScratchOpen<cr>")
+map("n", "<M-C-n>", "<cmd>Scratch<cr>")
+map("n", "<M-C-o>", "<cmd>ScratchOpen<cr>")
