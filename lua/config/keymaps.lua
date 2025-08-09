@@ -31,3 +31,27 @@ map({ "n", "x" }, "<C-a>", "ggVG", { desc = "Select all contents within current 
 -- Scartch setting
 map("n", "<M-C-n>", "<cmd>Scratch<cr>")
 map("n", "<M-C-o>", "<cmd>ScratchOpen<cr>")
+
+-- Terminal setting
+-- Open a terminal in a horizontal (bottom) split
+map("n", "<leader>tb", function()
+  Snacks.terminal.open(nil, { win = { position = "bottom" } })
+end, { desc = "Open terminal in bottom split" })
+
+-- Open a terminal in a vertical (right) split
+map("n", "<leader>tr", function()
+  Snacks.terminal.open(nil, { win = { position = "right" } })
+end, { desc = "Open terminal in right split" })
+
+-- Open a terminal in a vertical (left) split
+map("n", "<leader>tl", function()
+  Snacks.terminal.open(nil, { win = { position = "left" } })
+end, { desc = "Open terminal in left split" })
+
+-- Open a floating terminal
+map("n", "<leader>tf", function()
+  Snacks.terminal.open("zsh") -- or any other command
+end, { desc = "Open floating terminal" })
+
+-- Claude code keymao setting
+vim.keymap.set('n', '<leader>cc', '<cmd>ClaudeCode<CR>', { desc = 'Toggle Claude Code' })
